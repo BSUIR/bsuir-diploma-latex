@@ -7,9 +7,9 @@ services:
 
 language: shell
 
-env:
-  - TZ=Europe/Minsk
-  - DEBIAN_FRONTEND=noninteractive
+before_script:
+  - export TZ=Europe/Minsk
+  - export DEBIAN_FRONTEND=noninteractive
 
 script:
   - export VERSION="$(date "+%Y-%m-%d")-${TRAVIS_BUILD_NUMBER}"
