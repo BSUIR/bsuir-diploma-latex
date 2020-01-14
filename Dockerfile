@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 MAINTAINER Ruslan Ibragimov <ruslan@ibragimov.by>
 
 RUN apt update && \
-apt install tzdata -y \
+apt install tzdata -y && \
 apt autoremove -y && \
 apt autoclean && \
 apt clean
