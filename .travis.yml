@@ -8,9 +8,8 @@ services:
 language: shell
 
 script:
-  - export PACKAGE_VERSION="$(date "+%Y-%m-%d")"
-  - echo "${PACKAGE_VERSION}"
-  - docker build -t "heapy/bsuir-diploma-latex:${PACKAGE_VERSION}-${TRAVIS_BUILD_NUMBER}" -t latest ./
+  - export VERSION="$(date "+%Y-%m-%d")-${TRAVIS_BUILD_NUMBER}"
+  - docker build -t "heapy/bsuir-diploma-latex:${VERSION}" -t latest ./
 
 deploy:
   provider: script
