@@ -7,9 +7,9 @@ services:
 
 language: shell
 
-before_install:
-  - echo "Europe/Minsk" | sudo tee /etc/timezone
-  - sudo dpkg-reconfigure --frontend noninteractive tzdata
+env:
+  - TZ=Europe/Minsk
+  - DEBIAN_FRONTEND=noninteractive
 
 script:
   - export VERSION="$(date "+%Y-%m-%d")-${TRAVIS_BUILD_NUMBER}"
