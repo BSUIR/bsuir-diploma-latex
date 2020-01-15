@@ -7,10 +7,6 @@ services:
 
 language: shell
 
-before_script:
-  - export TZ=Europe/Minsk
-  - export DEBIAN_FRONTEND=noninteractive
-
 script:
   - export VERSION="$(date "+%Y-%m-%d")-${TRAVIS_BUILD_NUMBER}"
   - docker build -t "heapy/bsuir-diploma-latex:${VERSION}" -t latest ./
