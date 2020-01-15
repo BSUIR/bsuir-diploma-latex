@@ -2,11 +2,11 @@ FROM ubuntu:18.04
 
 MAINTAINER Ruslan Ibragimov <ruslan@ibragimov.by>
 
-RUN apt update && \
-apt install tzdata -y && \
-apt autoremove -y && \
-apt autoclean && \
-apt clean
+RUN apt-get update && \
+apt-get install tzdata -y && \
+apt-get autoremove -y && \
+apt-get autoclean && \
+apt-get clean
 
 #apt-get install -y \
 #    texlive-latex-recommended \
