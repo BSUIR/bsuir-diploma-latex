@@ -1,10 +1,3 @@
-ifeq ($(OS),Windows_NT)
-	SHELL=%WINDIR%/cmd.exe
-	DROPBOX_PUBLIC=$(USERPROFILE)/Dropbox/Public
-else
-	SHELL=/usr/bin/env sh
-	DROPBOX_PUBLIC=$(HOME)/Dropbox/Public
-endif
 PDFLATEX = pdflatex
 DIPLOMA_REPORT_PDF = diploma_report
 PRACTICE_REPORT_PDF = practice_report
@@ -13,15 +6,9 @@ TITLE_PDF = diploma_title_only
 TASK_PDF = diploma_task_only
 BIBTEX = bibtex
 RM = rm -f
-GREP = grep
 
 
 all: $(DIPLOMA_REPORT_PDF).pdf $(PRACTICE_REPORT_PDF).pdf $(TITLE_PDF).pdf $(TASK_PDF).pdf
-
-
-publish_to_dropbox: all
-	cp $(DIPLOMA_REPORT_PDF).pdf $(DROPBOX_PUBLIC)/$(DIPLOMA_REPORT_PDF).pdf
-	cp $(PRACTICE_REPORT_PDF).pdf $(DROPBOX_PUBLIC)/$(PRACTICE_REPORT_PDF).pdf
 
 fast: *.tex
 	latexmk -pdf -pdflatex="pdflatex" $(DIPLOMA_REPORT_PDF)
