@@ -9,7 +9,7 @@ language: shell
 
 script:
   - export VERSION="$(date "+%Y-%m-%d")-${TRAVIS_BUILD_NUMBER}"
-  - docker build -t "heapy/bsuir-diploma-latex:${VERSION}" -t latest ./
+  - docker build -t "heapy/bsuir-diploma-latex:${VERSION}" -t latest ./docker
 
 deploy:
   provider: script
