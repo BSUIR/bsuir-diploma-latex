@@ -1,5 +1,4 @@
-# Also, test with "focal"
-FROM ubuntu:bionic-20191202
+FROM ubuntu:focal-20200319
 
 MAINTAINER Ruslan Ibragimov <ruslan@ibragimov.by>
 
@@ -15,6 +14,6 @@ RUN apt-get update && \
 
 WORKDIR /home/workdir
 
-VOLUME [ "/home/workdir" ]
+VOLUME ["/home/workdir"]
 
 CMD ["/bin/bash"]

@@ -8,11 +8,15 @@ services:
 language: shell
 
 script:
-  - export VERSION="$(date "+%Y-%m-%d")-${TRAVIS_BUILD_NUMBER}"
-  - docker build -t "heapy/bsuir-diploma-latex:${VERSION}" -t latest ./docker
+  - export VERSION="$(date "+%Y%m%d")-${TRAVIS_BUILD_NUMBER}"
+  - echo "Docker tag - ${VERSION}"
+  - docker build -t "heapy/bsuir-diploma-latex:${VERSION}" -t latest ./.ci
 
 deploy:
   provider: script
-  script: bash devops/deploy.sh
+  script: bash ./.ci/deploy.sh
   on:
     branch: master
+
+# docker build .ci -t bdl
+# docker run -it --rm -v src:/home/workdir -t bdl
